@@ -6,7 +6,8 @@
     "co": "~3.0.2",
     "commander": "~2.1.0",
     "github": "~0.1.12",
-    "prompt": "~0.2.12"
+    "prompt": "~0.2.12",
+    "gnode": "0.0.6"
   },
   "repository": "",
   "author": "",
