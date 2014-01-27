@@ -2,7 +2,7 @@
 
 Add github labels automatically.
 
-It's very useful when you have lots of repos and want to edit labels.
+It's very useful that init all your custom labels when create a repo.
 
 ---
 
@@ -31,6 +31,12 @@ Your can simplify it, and will generate color automatically.
 
 ```
 ["bug", "feature"]
+```
+
+Force option will delete add existing labels, otherwise will create label when not exist or update label when existing label has different color.
+
+```
+$ labels -c path/to/conf.json -f user/repo
 ```
 
 ## Lisence
