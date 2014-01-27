@@ -8,6 +8,7 @@ program
   .version(require('../package.json').version)
   .usage('[options] user/repo')
   .option('-c, --config <path>', 'label config')
+  .option('-f, --force', 'force delete all labels')
   .on('--help', function(){
     console.log('  Examples:');
     console.log('');

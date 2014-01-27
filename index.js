@@ -3,8 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var co = require('co');
 var auth = require('./lib/auth');
-var deleteLabels = require('./lib/delete');
-var createLabels = require('./lib/create');
+var label = require('./lib/label');
 var color = require('./lib/colors.json');
 var dotfile = getDotFile();
 var GitHubApi = require('github');
@@ -35,14 +34,13 @@ module.exports = function(program){
     }
     console.info('>> Authorized');
     
-    console.info('>> Delete existing labels');
-    yield deleteLabels(opt);
+    if (program.force) {
+      console.info('>> Delete existing labels');
+      yield label.deleteAll(opt);
+    }
 
-    var labels = opt.config.map(function(item) {
-      return item.name;
-    }).join(', ');
-    console.info('>> Create labels [' + labels + ']');
-    yield createLabels(opt);
+    console.info('>> Create labels');
+    yield label.create(opt);
     console.info('>> Done');
   })();
 };
