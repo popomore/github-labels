@@ -12,6 +12,12 @@ var github = new GitHubApi({version: '3.0.0'});
 module.exports = function(program){
   co(function*() {
     var username, password, token = readToken();
+
+    /*
+      If token is not exist, it will get token by basic authorization,
+      and user should enter username and password.
+    */
+
     if (!token) {
       console.info('>> No permission, enter your username and password:');
       var result = yield getUserAndPass();
@@ -28,19 +34,32 @@ module.exports = function(program){
       github: github
     };
 
+    /*
+      Github Authorization
+    */
+
     token = yield auth(opt);
     if (token) {
       yield saveToken(token);
     }
     console.info('>> Authorized');
     
+    /*
+      Force option will delete add existing labels
+    */
+
     if (program.force) {
       console.info('>> Delete existing labels');
       yield label.deleteAll(opt);
     }
 
+    /*
+      Create labels from your given config
+    */
+
     console.info('>> Create labels');
     yield label.create(opt);
+
     console.info('>> Done');
   })();
 };

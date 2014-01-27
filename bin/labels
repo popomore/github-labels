@@ -20,6 +20,10 @@ program
 var repo = program.args[0];
 var config = program.config;
 
+/*
+  Should specify config and repo
+*/
+
 if (!config || !repo) {
   program.help();
   return;
