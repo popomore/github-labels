@@ -27,13 +27,13 @@ About config file, see [my conf](https://github.com/popomore/dotfile/blob/master
 ]
 ```
 
-Your can simplify it, and will generate color automatically.
+Your can simplify it that will generate github default color automatically.
 
 ```
 ["bug", "feature"]
 ```
 
-Force option will delete add existing labels, otherwise will create label when not exist or update label when existing label has different color.
+Force option will delete all existing labels, otherwise will create label when not exist or update label when existing label has different color.
 
 ```
 $ labels -c path/to/conf.json -f user/repo
