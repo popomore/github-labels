@@ -38,6 +38,7 @@ module.exports = function(program){
       Github Authorization
     */
 
+    console.info('>> Authorizing');
     token = yield auth(opt);
     if (token) {
       yield saveToken(token);
@@ -104,7 +105,7 @@ function parse (config) {
 
 function readToken() {
   if (fs.existsSync(dotfile)) {
-    return fs.readFileSync(dotfile).toString();
+    return fs.readFileSync(dotfile, 'utf8').replace(/\n$/, '');
   }
   return null;
 }
