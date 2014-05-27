@@ -1,5 +1,9 @@
 # History
 
+## 0.2.1
+
+Fix malformed token when \n is at the end.
+
 ## 0.2.0
 
 Add force option
