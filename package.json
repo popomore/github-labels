@@ -6,8 +6,9 @@
     "co": "~3.0.2",
     "commander": "~2.1.0",
     "github": "~0.1.12",
-    "prompt": "~0.2.12",
-    "gnode": "0.0.6"
+    "github-oauth-prompt": "0.2.1",
+    "gnode": "0.0.6",
+    "prompt": "~0.2.12"
   },
   "repository": "git@github.com:popomore/github-labels.git",
   "author": "popomore <sakura9515@gmail.com>",
