@@ -11,25 +11,11 @@ var github = new GitHubApi({version: '3.0.0'});
 
 module.exports = function(program){
   co(function*() {
-    var username, password, token = readToken();
-
-    /*
-      If token is not exist, it will get token by basic authorization,
-      and user should enter username and password.
-    */
-
-    if (!token) {
-      console.info('>> No permission, enter your username and password:');
-      var result = yield getUserAndPass();
-      username = result.username;
-      password = result.password;
-    }
+    var token = readToken();
 
     var opt = {
       config: parse(program.config),
       token: token,
-      username: username,
-      password: password,
       repo: program.args[0],
       github: github
     };
@@ -38,13 +24,12 @@ module.exports = function(program){
       Github Authorization
     */
 
-    console.info('>> Authorizing');
     token = yield auth(opt);
     if (token) {
       yield saveToken(token);
     }
     console.info('>> Authorized');
-    
+
     /*
       Force option will delete add existing labels
     */
@@ -64,24 +49,6 @@ module.exports = function(program){
     console.info('>> Done');
   })();
 };
-
-function getUserAndPass () {
-  var prompt = require('prompt');
-  prompt.delimiter = '';
-  prompt.message = '>> ';
-  prompt.colors = false;
-  prompt.start();
-  return function (callback) {
-    prompt.get([{
-      name: 'username',
-      required: true
-    }, {
-      name: 'password',
-      required: true,
-      hidden: true
-    }], callback);
-  };
-}
 
 function parse (config) {
   try {
@@ -112,6 +79,7 @@ function readToken() {
 
 function saveToken (token) {
   return function (callback) {
+    console.info('>> Saving token');
     fs.writeFile(dotfile, token, callback);
   };
 }
