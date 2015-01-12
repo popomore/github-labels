@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('gnode');
+require('ali.gnode');
 var program = require('commander');
 var main = require('..');
 
