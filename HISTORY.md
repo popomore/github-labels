@@ -1,5 +1,9 @@
 # History
 
+## 0.4.0
+
+upgrade deps
+
 ## 0.3.1
 
 Wrong bump on 0.3.0
