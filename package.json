@@ -3,12 +3,11 @@
   "version": "0.3.1",
   "description": "Add github labels automatically",
   "dependencies": {
-    "co": "~3.0.2",
-    "commander": "~2.1.0",
-    "github": "~0.1.12",
-    "github-oauth-prompt": "0.2.2",
-    "gnode": "0.0.6",
-    "prompt": "~0.2.12"
+    "co": "~3.1.0",
+    "commander": "~2.6.0",
+    "github": "~0.2.3",
+    "github-oauth-prompt": "~1.0.1",
+    "gnode": "~0.1.1"
   },
   "repository": "git@github.com:popomore/github-labels.git",
   "author": "popomore <sakura9515@gmail.com>",
