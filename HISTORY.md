@@ -1,4 +1,6 @@
-# History
+## 0.5.0 / 2015-03-31
+
+- auth js: add 'repo' to github's token application access request
 
 ## 0.4.0
 
