@@ -47,6 +47,6 @@ Here is a snippet to be able to export github labels from the labels page of a p
 
 Running this code in your browser console should output your some json ready to be imported.
 
-## Lisence
+## License
 
 MIT
