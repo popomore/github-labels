@@ -1,3 +1,8 @@
+## 0.5.1 / 2015-05-06
+
+- fix: createLabels or deleteAll is not defined
+- Add note for exporting labels
+
 ## 0.5.0 / 2015-03-31
 
 - auth js: add 'repo' to github's token application access request
