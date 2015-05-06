@@ -39,6 +39,14 @@ Force option will delete all existing labels, otherwise will create label when n
 $ labels -c path/to/conf.json -f user/repo
 ```
 
+### Export from github website
+
+Here is a snippet to be able to export github labels from the labels page of a project
+
+[gist.github.com/MoOx/93c2853fee760f42d97f](https://gist.github.com/MoOx/93c2853fee760f42d97f)
+
+Running this code in your browser console should output your some json ready to be imported.
+
 ## Lisence
 
 MIT
