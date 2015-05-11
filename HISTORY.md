@@ -1,3 +1,7 @@
+## 0.5.2 / 2015-05-11
+
+- fix: use fs to load config, not require
+
 ## 0.5.1 / 2015-05-06
 
 - fix: createLabels or deleteAll is not defined
