@@ -52,9 +52,10 @@ module.exports = function(program){
 
 function parse (config) {
   try {
-    config = require(path.resolve(config));
+    config = JSON.parse(fs.readFileSync(path.resolve(config)));
   } catch(e) {
     console.error('>> Parse config error');
+    console.error(e.stack);
     process.exit(1);
   }
 
