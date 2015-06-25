@@ -7,9 +7,16 @@ var label = require('./lib/label');
 var color = require('./lib/colors.json');
 var dotfile = getDotFile();
 var GitHubApi = require('github');
-var github = new GitHubApi({version: '3.0.0'});
 
 module.exports = function(program){
+  console.info(program.host);
+  var github = new GitHubApi({
+    version: '3.0.0',
+    port: '80',
+    pathPrefix: program.host ? "/api/v3/":"",
+    protocol: 'http',
+    host: program.host || 'api.github.com'
+  });
   co(function*() {
     var token = readToken();
 
