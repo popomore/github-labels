@@ -9,6 +9,7 @@ program
   .usage('[options] user/repo')
   .option('-c, --config <path>', 'label config')
   .option('-f, --force', 'force delete all labels')
+  .option('-h, --host <hostname>', 'host for GitHub server')
   .on('--help', function(){
     console.log('  Examples:');
     console.log('');
