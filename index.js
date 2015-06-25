@@ -9,7 +9,6 @@ var dotfile = getDotFile();
 var GitHubApi = require('github');
 
 module.exports = function(program){
-  console.info(program.host);
   var github = new GitHubApi({
     version: '3.0.0',
     port: '80',
