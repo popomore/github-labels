@@ -39,7 +39,17 @@ Force option will delete all existing labels, otherwise will create label when n
 $ labels -c path/to/conf.json -f user/repo
 ```
 
-### Export from github website
+## GitHub Entreprise configuration
+
+If you're using a private GitHub, you'll need to pass its domain name as parameter.
+
+```
+$ labels -c path/to/conf.json -h github.myhost.com user/repo
+```
+
+It currently only support the default path to the API `/api/v3` on port 80.
+
+### Export from GitHub website
 
 Here is a snippet to be able to export github labels from the labels page of a project
 

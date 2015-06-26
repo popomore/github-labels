@@ -1,3 +1,7 @@
+## Unreleased
+
+- Add hostname parameter for GitHub Entreprise
+
 ## 0.5.2 / 2015-05-11
 
 - fix: use fs to load config, not require
