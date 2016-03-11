@@ -1,6 +1,8 @@
-## Unreleased
 
-- Add hostname parameter for GitHub Entreprise
+0.6.0 / 2016-03-11
+==================
+
+ * Add hostname parameter for GitHub Entreprise
 
 ## 0.5.2 / 2015-05-11
 
