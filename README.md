@@ -18,7 +18,7 @@ $ npm install github-labels -g
 $ labels -c path/to/conf.json user/repo
 ```
 
-About config file, see [my conf](https://github.com/popomore/dotfile/blob/master/conf/labels.json) for example.
+About config file, see [my conf](https://gist.github.com/popomore/8ef8ad0573c97081da22dca1cc84173e) for example.
 
 ```
 [
