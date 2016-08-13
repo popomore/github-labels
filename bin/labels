@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-var program = require('commander');
-var main = require('..');
+'use strict';
+
+const program = require('commander');
+const main = require('..');
 
 program
   .version(require('../package.json').version)
@@ -9,7 +11,7 @@ program
   .option('-c, --config <path>', 'label config')
   .option('-f, --force', 'force delete all labels')
   .option('-h, --host <hostname>', 'host for GitHub server')
-  .on('--help', function(){
+  .on('--help', function() {
     console.log('  Examples:');
     console.log('');
     console.log('    $ labels -c ~/labels.json popomore/test');
@@ -17,8 +19,8 @@ program
   })
   .parse(process.argv);
 
-var repo = program.args[0];
-var config = program.config;
+const repo = program.args[0];
+const config = program.config;
 
 /*
   Should specify config and repo
