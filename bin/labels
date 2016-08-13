@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-require('gnode');
 var program = require('commander');
 var main = require('..');
 

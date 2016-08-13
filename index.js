@@ -11,10 +11,9 @@ var GitHubApi = require('github');
 module.exports = function(program){
   var github = new GitHubApi({
     version: '3.0.0',
-    port: '80',
-    pathPrefix: program.host ? "/api/v3/":"",
-    protocol: 'http',
-    host: program.host || 'api.github.com'
+    protocol: 'https',
+    pathPrefix: program.host,
+    host: program.host,
   });
   co(function*() {
     var token = readToken();
@@ -53,7 +52,7 @@ module.exports = function(program){
     yield label.create(opt);
 
     console.info('>> Done');
-  })();
+  }).catch(err => console.error(err.stack));
 };
 
 function parse (config) {
