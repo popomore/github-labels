@@ -1,29 +1,29 @@
-/* jshint esnext: true */
-var fs = require('fs');
-var path = require('path');
-var co = require('co');
-var auth = require('./lib/auth');
-var label = require('./lib/label');
-var color = require('./lib/colors.json');
-var dotfile = getDotFile();
-var GitHubApi = require('github');
+'use strict';
 
-module.exports = function(program){
-  var github = new GitHubApi({
+const fs = require('fs');
+const path = require('path');
+const co = require('co');
+const auth = require('./lib/auth');
+const label = require('./lib/label');
+const color = require('./lib/colors.json');
+const dotfile = getDotFile();
+const GitHubApi = require('github');
+
+module.exports = program => {
+  const github = new GitHubApi({
     version: '3.0.0',
-    port: '80',
-    pathPrefix: program.host ? "/api/v3/":"",
-    protocol: 'http',
-    host: program.host || 'api.github.com'
+    protocol: 'https',
+    pathPrefix: program.host,
+    host: program.host,
   });
-  co(function*() {
-    var token = readToken();
+  co(function* () {
+    let token = program.token || readToken();
 
-    var opt = {
+    const opt = {
       config: parse(program.config),
-      token: token,
+      token,
       repo: program.args[0],
-      github: github
+      github,
     };
 
     /*
@@ -53,13 +53,13 @@ module.exports = function(program){
     yield label.create(opt);
 
     console.info('>> Done');
-  })();
+  }).catch(err => console.error(err));
 };
 
-function parse (config) {
+function parse(config) {
   try {
     config = JSON.parse(fs.readFileSync(path.resolve(config)));
-  } catch(e) {
+  } catch (e) {
     console.error('>> Parse config error');
     console.error(e.stack);
     process.exit(1);
@@ -69,7 +69,7 @@ function parse (config) {
 
   return config.map(function(item) {
     if (typeof item !== 'object') {
-      item = {name: item, color: randomColor()};
+      item = { name: item, color: randomColor() };
     } else {
       item.color = item.color || randomColor();
     }
@@ -84,20 +84,19 @@ function readToken() {
   return null;
 }
 
-function saveToken (token) {
-  return function (callback) {
-    console.info('>> Saving token');
+function saveToken(token) {
+  return function(callback) {
     fs.writeFile(dotfile, token, callback);
   };
 }
 
-function randomColor () {
-  var len = color.length;
+function randomColor() {
+  const len = color.length;
   return color[Math.floor(Math.random() * len)];
 }
 
-function getDotFile () {
-  var home = process.env.HOME;
+function getDotFile() {
+  let home = process.env.HOME;
   if (!home) {
     home = process.env.HOMEDRIVE + process.env.HOMEPATH;
   }
