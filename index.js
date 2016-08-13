@@ -53,7 +53,7 @@ module.exports = program => {
     yield label.create(opt);
 
     console.info('>> Done');
-  }).catch(err => console.error(err.stack));
+  }).catch(err => console.error(err));
 };
 
 function parse(config) {
