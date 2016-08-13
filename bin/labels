@@ -11,6 +11,7 @@ program
   .option('-c, --config <path>', 'label config')
   .option('-f, --force', 'force delete all labels')
   .option('-h, --host <hostname>', 'host for GitHub server')
+  .option('-t, --token <token>', 'github token')
   .on('--help', function() {
     console.log('  Examples:');
     console.log('');

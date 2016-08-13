@@ -17,7 +17,7 @@ module.exports = program => {
     host: program.host,
   });
   co(function* () {
-    let token = readToken();
+    let token = program.token || readToken();
 
     const opt = {
       config: parse(program.config),
