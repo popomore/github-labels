@@ -1,4 +1,10 @@
 
+0.7.0 / 2016-08-14
+==================
+
+  * feat: use https to request github (#20)
+  * doc: update config url
+
 0.6.0 / 2016-03-11
 ==================
 
