@@ -12,10 +12,13 @@ program
   .option('-f, --force', 'force delete all labels')
   .option('-h, --host <hostname>', 'host for GitHub server')
   .option('-t, --token <token>', 'github token')
+  .option('-p, --pathPrefix <prefix>', 'path prefix for GitHub API')
   .on('--help', function() {
     console.log('  Examples:');
     console.log('');
     console.log('    $ labels -c ~/labels.json popomore/test');
+    console.log('');
+    console.log('    $ labels -c ~/labels.json -h github.myenterprise.com -p /api/v3 -t PERSONAL_TOKEN_123 popomore/test');
     console.log('');
   })
   .parse(process.argv);
