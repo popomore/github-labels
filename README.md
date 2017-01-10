@@ -41,13 +41,20 @@ $ labels -c path/to/conf.json -f user/repo
 
 ## GitHub Entreprise configuration
 
-If you're using a private GitHub, you'll need to pass its domain name as parameter.
+If you're using a private GitHub, you'll need to pass some additional parameters to target your environment
+* `host` - The hostname of your GHE instance.
+* `pathPrefix` - The path to the API. Frequently for GHE this will be `/api/v3`.
 
 ```
-$ labels -c path/to/conf.json -h github.myhost.com user/repo
+$ labels -c path/to/conf.json -h github.myhost.com -p /api/v3 user/repo
 ```
 
-It currently only support the default path to the API `/api/v3` on port 80.
+You can also provide the OAuth token to be used directly via the `--token` parameter. 
+This is useful when your GHE environment does not allow user/pass login.
+
+```
+$ labels -c path/to/conf.json -h github.myhost.com -p /api/v3 -t PERSONAL_TOKEN_123 user/repo
+```
 
 ### Export from GitHub website
 
