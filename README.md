@@ -39,9 +39,9 @@ Force option will delete all existing labels, otherwise will create label when n
 $ labels -c path/to/conf.json -f user/repo
 ```
 
-## GitHub Entreprise configuration
+## GitHub Enterprise configuration
 
-If you're using a private GitHub, you'll need to pass some additional parameters to target your environment
+If you're using a GitHub Enterprise instance, you'll need to pass some additional parameters to target your environment
 * `host` - The hostname of your GHE instance.
 * `pathPrefix` - The path to the API. Frequently for GHE this will be `/api/v3`.
 
