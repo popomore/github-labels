@@ -13,7 +13,7 @@ module.exports = program => {
   const github = new GitHubApi({
     version: '3.0.0',
     protocol: 'https',
-    pathPrefix: program.host,
+    pathPrefix: program.pathPrefix,
     host: program.host,
   });
   co(function* () {
