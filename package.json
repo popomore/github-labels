@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "eslint": "^3.3.0",
-    "eslint-config-egg": "^3.1.0"
+    "eslint-config-egg": "^7.1.0"
   },
   "scripts": {
     "test": "eslint ."
