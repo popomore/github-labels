@@ -15,7 +15,7 @@ $ npm install github-labels -g
 ## Usage
 
 ```
-$ labels -c path/to/conf.json user/repo
+$ labels -c path/to/conf.json -t github-personal-access-token user/repo
 ```
 
 About config file, see [my conf](https://gist.github.com/popomore/8ef8ad0573c97081da22dca1cc84173e) for example.
