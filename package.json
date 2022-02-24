@@ -5,8 +5,7 @@
   "dependencies": {
     "co": "^4.6.0",
     "commander": "^2.9.0",
-    "github": "^2.4.1",
-    "github-oauth-prompt": "~1.1.0"
+    "@octokit/rest": "^18.12.0"
   },
   "devDependencies": {
     "eslint": "^3.3.0",
@@ -18,7 +17,7 @@
   "repository": "git@github.com:popomore/github-labels.git",
   "author": "popomore <sakura9515@gmail.com>",
   "bin": {
-    "labels": "./bin/labels"
+    "labels": "DEBUG=octokit* ./bin/labels"
   },
   "license": "MIT"
 }
